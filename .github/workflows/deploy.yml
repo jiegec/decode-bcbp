@@ -1,0 +1,22 @@
+name: Deploy CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm i
+    - name: Build
+      run: npm run build
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@2.0.2
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: public
