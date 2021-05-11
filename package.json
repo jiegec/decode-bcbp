@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bcbp": "^1.0.10",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "vue": "^2.6.11"
   },
   "devDependencies": {
