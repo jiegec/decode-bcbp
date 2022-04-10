@@ -1,6 +1,4 @@
-import Main from './Main.vue';
-import Vue from 'vue/dist/vue.esm.browser';
+import { createApp } from 'vue'
+import Main from './Main.vue'
 
-new Vue({
-    render: h => h(Main)
-}).$mount('#app');
+createApp(Main).mount('#app')
