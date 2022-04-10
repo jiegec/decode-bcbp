@@ -1,6 +1,9 @@
 name: Deploy CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,9 +17,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@2.0.2
+      uses: JamesIves/github-pages-deploy-action@4.3.0
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: public
+        branch: gh-pages
+        folder: public
