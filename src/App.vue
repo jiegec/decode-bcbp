@@ -47,8 +47,10 @@ const entries = computed(() => {
       <p>Entry #{{ i + 1 }}</p>
       <table>
         <thead>
-          <th>Key</th>
-          <th>Value</th>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
         </thead>
         <tbody>
           <tr v-for="v in entry">
