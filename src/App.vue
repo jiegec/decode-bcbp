@@ -4,7 +4,7 @@ import lodash from 'lodash'
 import { computed } from 'vue'
 
 const content = defineModel({
-  default: 'M1DESMARAIS/LUC       EABC123 YULFRAAC 0834 226F001A0025100' // Taken from BCBP Standard (Resolution 792) example
+  default: 'M1DESMARAIS/LUC       EABC123 YULFRAAC 0834 226F001A0025100', // Taken from BCBP Standard (Resolution 792) example
 })
 
 const result = computed(() => {
@@ -42,8 +42,8 @@ const entries = computed(() => {
     <h1>Input BCBP here</h1>
     <textarea v-model="content"></textarea>
     <h2>Result</h2>
-    <p v-for="field in fields">{{ field }}</p>
-    <div v-for="(entry, i) in entries">
+    <p v-for="field in fields" :key="field">{{ field }}</p>
+    <div v-for="(entry, i) in entries" :key="i">
       <p>Entry #{{ i + 1 }}</p>
       <table>
         <thead>
@@ -53,7 +53,7 @@ const entries = computed(() => {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="v in entry">
+          <tr v-for="v in entry" :key="v[0]">
             <td>{{ v[0] }}</td>
             <td>{{ v[1] }}</td>
           </tr>
