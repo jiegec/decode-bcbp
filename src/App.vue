@@ -12,17 +12,18 @@ const result = computed(() => {
 })
 
 const fields = computed(() => {
-  let result = []
-  for (let key in result.value.data) {
-    let value = result.value.data[key]
+  const data = result.value.data
+  let lines = []
+  for (let key in data) {
+    let value = data[key]
     if (key == 'legs') {
       continue
     } else if (value === undefined) {
       continue
     }
-    result.push(lodash.startCase(key) + ': ' + value)
+    lines.push(lodash.startCase(key) + ': ' + value)
   }
-  return result
+  return lines
 })
 
 const entries = computed(() => {
