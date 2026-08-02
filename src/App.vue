@@ -13,8 +13,8 @@ const result = computed(() => {
 
 const fields = computed(() => {
   let result = []
-  for (let key in result.value) {
-    let value = result.value[key]
+  for (let key in result.value.data) {
+    let value = result.value.data[key]
     if (key == 'legs') {
       continue
     } else if (value === undefined) {
@@ -26,7 +26,7 @@ const fields = computed(() => {
 })
 
 const entries = computed(() => {
-  return result.value.legs.map((leg) => {
+  return result.value.data.legs.map((leg) => {
     let result = []
     for (let key in leg) {
       let value = leg[key]
